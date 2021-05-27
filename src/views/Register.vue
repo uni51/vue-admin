@@ -24,7 +24,7 @@
       </div>
 
       <div class="form-floating">
-        <input v-model="password_confirm" type="password" class="form-control" placeholder="Password  Confirm">
+        <input v-model="password_confirm" type="password" class="form-control" placeholder="Password Confirm">
         <label>Password Confirm</label>
       </div>      
 
@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     async submit() {
-      await axios.post('http://localhost:8000/api/admin/register', {
+      await axios.post('register', {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
