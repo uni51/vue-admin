@@ -4,15 +4,26 @@
 
 
     <nav class="my-2 my-md-0 mr-md-3">
-      <a href="#" class="p-2 text-white text-decoration-none">{{ user.first_name }} {{ user.last_name }}</a>
-      <a href="#" class="p-2 text-white text-decoration-none">Sign out</a>
+      <router-link to="/profile" class="p-2 text-white text-decoration-none">
+        {{ user.first_name }} {{ user.last_name }}
+      </router-link>
+      <a href="#" class="p-2 text-white text-decoration-none" @click="logout">Sign out</a>
     </nav>
   </header>  
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Nav",
-  props: ['user']
+  props: ['user'],
+  methods: {
+    async logout() {
+      await axios.post('logout');
+
+      await this.$router.push('/login');
+    }
+  }
 }
 </script>
