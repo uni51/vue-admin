@@ -1,22 +1,26 @@
 <template>
-  <table class="table table-striped table-sm">
-    <thead>
+  <v-simple-table>
+    <template v-slot:default>
+      <thead>
       <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Actions</th>
+        <th class="text-left">#</th>
+        <th class="text-left">Name</th>
+        <th class="text-left">Email</th>
+        <th class="text-left">Actions</th>
       </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
       <tr v-for="user in users" :key="user.id">
         <td>{{user.id}}</td>
         <td>{{user.first_name}} {{user.last_name}}</td>
         <td>{{user.email}}</td>
-        <td></td>
+        <td>
+          <v-btn :href="`/users/${user.id}/links`" color="primary" elevation="2">View</v-btn>
+        </td>
       </tr>
-    </tbody>
-  </table>  
+      </tbody>
+    </template>
+  </v-simple-table>
 </template>
 
 <script>
@@ -36,7 +40,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-
-</style>
