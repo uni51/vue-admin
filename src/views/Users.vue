@@ -11,10 +11,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr v-for="user in users.slice((page -1) * perPage, page * perPage)" :key="user.id">
-          <td>{{user.id}}</td>
-          <td>{{user.first_name}} {{user.last_name}}</td>
-          <td>{{user.email}}</td>
+        <tr v-for="user in users.slice((page -1)*perPage, page*perPage)" :key="user.id">
+          <td>{{ user.id }}</td>
+          <td>{{ user.first_name }} {{ user.last_name }}</td>
+          <td>{{ user.email }}</td>
           <td>
             <v-btn :href="`/users/${user.id}/links`" color="primary" elevation="2">View</v-btn>
           </td>
