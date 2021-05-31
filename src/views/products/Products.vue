@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div class="pt-3 pb-2 mb-3 border-bottom">
+      <v-btn href="/products/create" variant="contained" color="primary">Add</v-btn>
+    </div>
+
     <v-simple-table>
       <template v-slot:default>
         <thead>
