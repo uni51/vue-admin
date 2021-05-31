@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Nav :user="user"/>
+    <Nav />
 
     <div div class="container-fluid">
       <div class="row">
@@ -33,7 +33,8 @@ export default {
   async mounted() {
     try {
       const {data} = await axios.get('user');
-      this.user = data;
+
+      await this.$store.dispatch('setUser', data)
     } catch (e) {
       await this.$router.push('/login');
     }
