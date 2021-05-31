@@ -27,8 +27,9 @@
           <td>{{ product.price }}</td>
           <td>
             <v-btn-toggle>
+              <v-btn color="primary" :href="`/products/${product.id}/edit`">Edit</v-btn>
               <v-btn color="error" @click="del(product.id)">Delete</v-btn>
-            </v-btn-toggle>            
+            </v-btn-toggle>
           </td>
         </tr>
         </tbody>
